@@ -1,0 +1,122 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Заказы
+{% endblock %}
+
+{% load static %}
+
+
+{% block center %}
+
+
+            <div class="under-add-project">
+                <a class="back-to-projects" href=" {% url 'orders' %} ">
+                    <img id="back" src=" {% static 'main/img/Стрелка.png' %} " alt='Назад'>
+                </a>
+                <h1 id="text-add-project">
+
+                    {% if oredr.id %}
+            Редактировать заказ
+
+            {% else %}
+            Добавить заказ
+            {% endif %}
+                </h1>
+            </div>
+
+<form method="post" enctype="multipart/form-data" class="for-form">
+
+
+
+
+    <div class="first-main-add-project">
+
+        <div class="first-main-add-project-left">
+
+            {% csrf_token %}
+
+
+
+
+
+            {{ form.place }}
+            {{ form.customer }}
+
+            {{ form.phone }}
+
+
+        </div>
+
+
+        <div class="first-main-add-project-right">
+<!--            <input type="date">-->
+<!--            <input type="time">-->
+
+            {{ form.date }}
+            {{ form.time }}
+        </div>
+
+
+    </div>
+
+
+    <div class="second-main-add-project first-main-add-project">
+
+        <div class="first-main-add-project-right q1">
+            <div class="add-in-project add-employee-in-project">
+                <div class="under-in-add-in-project">
+                    Выберите сотрудников
+                </div>
+                <div class="bottom-in-add-in-project">
+
+
+                    {{ form.employee }}
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="first-main-add-project-right q2">
+            <div class="add-in-project add-props-in-project">
+                <div class="under-in-add-in-project">
+                    Выберите проект
+                </div>
+                <div class="bottom-in-add-in-project">
+
+
+
+                    <select id="id_project" name="project">
+                        {% for project in projects.all %}
+                            <option value=" {{ project.id }} ">{{ project.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="button-add-project first-main-add-project">
+
+        <button id="button-add-project" type="submit">
+
+            {% if project.id %}
+            Редактировать
+
+            {% else %}
+            Создать
+            {% endif %}
+        </button>
+    </div>
+    <span> {{ error }} </span>
+
+
+</form>
+
+
+{% endblock %}
+
+

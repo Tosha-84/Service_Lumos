@@ -1,0 +1,819 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+#screen {}
+
+.under {
+    position: relative;
+    height: 80px;
+    width: 100%;
+
+    background: #000000;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 111px 1fr 111px;
+    /* background: #9455; */
+
+    height: calc(100vh - 80px);
+}
+
+.panel {
+    position: relative;
+
+    width: 111px;
+    /* height: 10px; */
+    /* height: 90.9vh; */
+
+    background: #585353;
+
+}
+
+.right {
+    /* right: 0; */
+}
+
+.logo {
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+    /* height: 85px; */
+    width: 140px;
+    top: 50%;
+    margin-top: -31px;
+    left: 50%;
+    margin-left: -85px;
+}
+
+.username {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.avatar {
+    position: relative;
+    /* display: block; */
+    height: 60px;
+    width: 60px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -30px;
+}
+
+.name {
+    position: relative;
+    width: 200px;
+    padding-left: 30px;
+    text-align: left;
+
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.625em;
+    font-size: 20px;
+    color: white;
+}
+
+.menu-item {
+    position: relative;
+    display: block;
+    background: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: 13px;
+}
+
+.menu-item:hover {
+    border: solid #c23e3e 3px;
+    width: 74px;
+    height: 74px;
+}
+
+.icon {
+    position: relative;
+    width: 50px;
+    top: 50%;
+    margin-top: -25px;
+    left: 50%;
+    margin-left: -25px;
+}
+
+.center {
+
+
+
+    /* position: relative;
+
+    display: flex; */
+
+    /* background: rgb(190, 18, 18); */
+    overflow: hidden;
+
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-direction: row-reverse; */
+}
+
+
+.projects {
+    width: 100%;
+    height: 100%;
+}
+
+.under-projects {
+    position: relative;
+    /* background: rgb(236, 112, 112); */
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.in-under-project {
+    height: 80%;
+    /* width: 20%; */
+    /* Можно задать любую другую ширину блока */
+    margin: 0;
+    margin: 15px;
+
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+#search-project {
+    width: 40%;
+}
+
+#all-projects {
+    width: 10%;
+}
+
+#fire-projects {
+    width: 15%;
+}
+
+#light-projects {
+    width: 15%;
+}
+
+#dance-projects {
+    width: 20%;
+}
+
+.main-projects {
+    width: 100%;
+    height: calc(100% - 80px);
+    position: relative;
+    overflow: auto;
+    padding-left: 80px;
+    padding-top: 25px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.project {
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    width: 527px;
+    height: 321px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+    /* background: rgb(228, 245, 131); */
+}
+
+.project:hover {
+    box-shadow: 8px 8px 8px #F24941;
+}
+
+.avatar-project-div {
+    position: relative;
+    /* background: rgb(202, 92, 92); */
+
+    /* background: url(../img/Я\ с\ собакой.jpg); */
+
+    width: 100%;
+    height: 70%;
+    border-radius: 29px 29px 0px 0px;
+    border-bottom: 1px solid #000000;
+
+}
+
+.avatar-project {
+    /* max-width: 100%;
+        max-height: 100%;
+        height: auto;     */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 29px 29px 0 0;
+}
+
+.name-project {
+    position: relative;
+    /* background: rgb(199, 232, 141); */
+    width: 100%;
+    height: calc(30% - 1px);
+    border-radius: 0px 0px 29px 29px;
+
+    padding-left: 20px;
+    padding-top: 25px;
+    text-align: left;
+    font-size: 30px;
+}
+
+#add-project {
+    display: block;
+
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #F24941;
+    bottom: 10px;
+    right: 120px;
+    box-sizing: border-box;
+    padding-top: 15px;
+
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    /* padding-top: 10px; */
+    /* padding-bottom: -10px; */
+    text-decoration: none;
+}
+
+.under-add-project {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 10%;
+
+
+    display: flex;
+    /* flex-flow: row nowrap; */
+    align-items: center;
+    /* align-content: center; */
+    /* justify-content: space-between; */
+
+    /* background: rgb(242, 209, 209); */
+}
+
+.back-to-projects {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+    align-content: center;
+    align-items: center;
+
+    margin-left: 10px;
+
+}
+
+#text-add-project {
+    width: 260px;
+    /* position: absolute; */
+    font-size: 30px;
+    /* margin-left: 0 auto; */
+    /* margin-left: 50%; */
+    /* margin-right: 50%; */
+
+    margin-left: calc(50% - 130px);
+}
+
+.first-main-add-project {
+    position: relative;
+    width: 100%;
+    height: 40%;
+
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+
+
+    /* background: rgb(222, 165, 165); */
+}
+
+.first-main-add-project h1 {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.first-main-add-project-left {
+    /* background: rgb(179, 239, 110); */
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.first-main-add-project-right {
+    /* background: rgb(221, 225, 94); */
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.field-in-add-project {
+    height: 22%;
+    width: 80%;
+    /* Можно задать любую другую ширину блока */
+    margin: 0;
+    margin: 15px;
+
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+#preview-in-add-project {
+    width: 467px;
+    height: 285px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+#preview-in-add-project:hover {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.second-main-add-project {
+    position: relative;
+    /* background: rgb(110, 67, 67); */
+    width: 100%;
+    height: 40%;
+}
+
+.button-add-project {
+    position: relative;
+    /* background: rgb(94, 38, 38); */
+    width: 100%;
+    height: 10%;
+}
+
+.add-in-project {
+    background: white;
+    width: 90%;
+    height: 95%;
+
+    border: 1px solid;
+    border-radius: 30px;
+}
+
+.q1 {
+    /* background: rgb(235, 127, 183); */
+}
+
+.q2 {
+    /* background: rgb(241, 72, 140); */
+}
+
+#button-add-project {
+    width: 200px;
+    height: 50px;
+    background: #F24941;
+    border: none;
+    border-radius: 30px;
+
+    color: white;
+    font-size: 17px;
+    font: bold;
+}
+
+.under-in-add-in-project {
+    /* background: rgb(99, 67, 67); */
+    width: 100%;
+    height: 15%;
+    border-radius: 29px 29px 0 0;
+    border-bottom: 1px solid;
+    text-align: center;
+    font-size: 22px;
+    /* margin-top: 10px; */
+}
+
+.bottom-in-add-in-project {
+    /* background: rgb(65, 29, 29); */
+    width: 100%;
+    height: calc(85% - 1px);
+    border-radius: 0 0 29px 29px;
+
+    display: block;
+    /* padding: -2px; */
+    /* flex-direction: column; */
+    overflow: auto;
+    /* z-index: 0; */
+}
+
+
+
+.employee-in-add-in-project {
+    position: relative;
+
+
+
+    height: 60px;
+    /* width: 20%; */
+    /* Можно задать любую другую ширину блока */
+    margin: 0;
+    margin: 15px;
+
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    /* display: block; */
+    /* padding-top: 20px; */
+    font-size: 20px;
+
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+    padding: 1;
+}
+
+.under-in-project {
+    border-radius: 0;
+    height: 150px;
+}
+
+.in-project1 {
+    /* background: rgb(208, 99, 99); */
+    height: 10%;
+}
+
+.in-project2 {
+    height: 90%;
+    /* background: rgb(206, 208, 99); */
+}
+
+.back-in-project {
+    /* background: #000; */
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    left: 0;
+}
+
+.in-under-in-project1 {
+    /* position: relative; */
+    margin-left: 100px;
+    /* background: rgb(221, 202, 117); */
+}
+
+.in-under-in-project2 {
+    /* background: rgb(181, 221, 128); */
+
+    /* display: flex; */
+    flex-flow: row nowrap;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* justify-content: space-around; */
+}
+
+#refactor-project {
+    position: absolute;
+    right: 150px;
+    top: 10px;
+
+    width: 200px;
+    height: 80%;
+    /* width: 20%; */
+    /* Можно задать любую другую ширину блока */
+    /* margin: 0; */
+    /* margin: 15px; */
+
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+#delete-project {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    width: 100px;
+    height: 80%;
+    /* width: 20%; */
+    /* Можно задать любую другую ширину блока */
+    /* margin: 0; */
+    /* margin: 15px; */
+
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+#back {
+    width: 40px;
+    height: auto;
+    margin-left: calc(50% - 20px);
+    margin-top: calc(50% - 20px);
+    transform: rotate(180deg);
+}
+
+.for-form {
+    display: inline;
+}
+
+.checkbox-in-add-project {
+    position: absolute;
+    display: block;
+    left: 0;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    top: 50%;
+    /* margin-top: 15px; */
+}
+
+#in-employees {
+    overflow: auto;
+    padding-bottom: auto;
+}
+
+.employee {
+    position: relative;
+    /* background: rgb(96, 113, 245); */
+    width: 80%;
+    height: 150px;
+    margin-left: calc(50% - 40%);
+    margin-top: 50px;
+
+    margin-bottom: 50px;
+
+    display: flex;
+    flex-direction: row;
+    border: 1px solid;
+    border-radius: 30px;
+}
+
+.avatar-employee-div {
+    /* background: rgb(235, 123, 123); */
+    height: 100%;
+    width: 150px;
+    border-radius: 29px;
+    border-right: 1px solid;
+
+    position: relative;
+    /* background: rgb(202, 92, 92); */
+
+    /* background: url(../img/Я\ с\ собакой.jpg); */
+    /*
+    width: 100%;
+    height: 70%;
+    border-radius: 29px 29px 0px 0px;
+    border-bottom: 1px solid #000000; */
+
+}
+
+.info-employee {
+    /* background: rgb(226, 240, 107); */
+
+    position: relative;
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    /* align-items: center; */
+    /* align-content: center; */
+
+    /* min-height: 10em; */
+    /* display: table-cell; */
+    /* vertical-align: middle */
+
+}
+
+.text-info-employee {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%)
+}
+
+.projects-employee {
+    /* background: rgb(178, 230, 110); */
+    height: 100%;
+    width: calc(70% - 150px);
+    border-radius: 29px;
+    border-left: 1px solid;
+    text-align: center;
+
+}
+
+.avatar-employee {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 29px 29px 29px 29px;
+}
+
+#main-employees {
+    /* background: rgb(183, 111, 111); */
+    position: absolute;
+    width: calc(100% - 222px);
+    height: calc(100% - 80px);
+    overflow: auto;
+}
+
+.avatar-employee-in-add-employee {
+    height: 300px;
+    width: 300px;
+    /* Можно задать любую другую ширину блока */
+    margin: 0;
+    margin: 15px;
+
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.name-props {
+    /* background: rgb(139, 246, 109); */
+    width: calc(100% - 20px);
+    height: calc(28% - 20px);
+
+}
+
+.name-props p {
+    position: absolute;
+}
+
+.props-status {
+    position: absolute;
+    display: flex;
+    /* flex-direction: row; */
+    right: 0;
+    margin-right: 20px;
+    margin-top: 6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(18, 250, 6);
+}
+
+#main-in-add-props {
+    height: 80%;
+}
+
+#delete-project-in-delete {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    margin-left: calc(50% - 100px);
+    margin-top: calc(18% - 25px);
+    background: #F24941;
+    color: white;
+    border-radius: 30px;
+    border: none;
+}
+
+.bottom-in-add-in-project select {
+    width: 100%;
+    height: 100%;
+}
+
+.refactor-employee {
+    position: absolute;
+    width: 110px;
+    height: 30px;
+    bottom: -32px;
+    right: 160px;
+    border: 1px solid;
+    border-radius: 0 0 30px 30px;
+    text-align: center;
+    font-size: 14px
+}
+
+.delete-employee {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    bottom: -32px;
+    right: 30px;
+    border: 1px solid;
+    border-radius: 0 0 30px 30px;
+    text-align: center;
+    font-size: 14px
+}
+
+.date-in-orders {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px 0 0 50px;
+}
+
+.avatar-employee-div-in-orders {
+    text-align: center;
+}
+
+.info-employee-in-orders {
+    width: 50%;
+}
+
+.text-info-employee-in-orders {
+
+}
+
+.projects-employee-in-orders {
+    width: calc(50% - 150px);
+}
+
+.refactor-employee-in-orders {
+    /* right: 500px; */
+}
+
+.delete-employee-in-orders {
+
+}
+
+.complete-employee-in-orders {
+    width: 200px;
+    right: 300px;
+}

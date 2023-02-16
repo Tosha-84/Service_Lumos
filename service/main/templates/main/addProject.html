@@ -1,0 +1,111 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Проекты
+{% endblock %}
+
+{% load static %}
+
+
+{% block center %}
+
+
+<div class="under-add-project">
+    {% if project.id %}
+    <a class="back-to-projects" href=" {% url 'project' project.id  %} ">
+        <img id="back" src=" {% static 'main/img/Стрелка.png' %} " alt='Назад'>
+    </a>
+
+    {% else %}
+    <a class="back-to-projects" href=" {% url 'projects' %} ">
+        <img id="back" src=" {% static 'main/img/Стрелка.png' %} " alt='Назад'>
+    </a>
+    {% endif %}
+
+
+    <h1 id="text-add-project">
+        {% if project.id %}
+            Редактировать проект
+
+            {% else %}
+            Создать проект
+            {% endif %}
+    </h1>
+</div>
+
+<form method="post" enctype="multipart/form-data" class="for-form">
+
+    <div class="first-main-add-project">
+
+        <div class="first-main-add-project-left">
+
+            {% csrf_token %}
+            {{ form.name }}
+            {{ form.base_cost }}
+            {{ form.avatar }}
+
+
+        </div>
+
+        <div class="first-main-add-project-right">
+            <div class="project" id="preview-in-add-project">
+                <div class="avatar-project-div">
+                    <img class="avatar-project" src="./img/Я с Сашей сижу.jpg">
+                </div>
+                <div class="name-project">
+                    Название...
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-main-add-project first-main-add-project">
+
+        <div class="first-main-add-project-right q1">
+            <div class="add-in-project add-employee-in-project">
+                <div class="under-in-add-in-project">
+                    Выберите сотрудников
+                </div>
+                <div class="bottom-in-add-in-project">
+
+
+                    {{ form.employee }}
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="first-main-add-project-right q2">
+            <div class="add-in-project add-props-in-project">
+                <div class="under-in-add-in-project">
+                    Выберите реквизит
+                </div>
+                <div class="bottom-in-add-in-project">
+
+                     {{ form.props }}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="button-add-project first-main-add-project">
+
+        <button id="button-add-project" type="submit">
+
+            {% if project.id %}
+            Редактировать
+
+            {% else %}
+            Создать
+            {% endif %}
+        </button>
+    </div>
+    <span> {{ error }} </span>
+
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,6 @@
+{% load static %}
+
+{% block load %}
+    <link rel="stylesheet" href=" {% static 'main/css/reset.css' %} ">
+    <link rel="stylesheet" href=" {% static 'main/css/style.css' %} ">
+{% endblock %}

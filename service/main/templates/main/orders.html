@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Заказы
+{% endblock %}
+
+{% block center %}
+<div id="main-employees">
+
+
+    {% if orders %}
+
+    {% for el in orders %}
+
+        <div class="employee">
+            <div class="avatar-employee-div avatar-employee-div-in-orders">
+                <p class="text-info-employee text-info-employee-in-orders">
+
+                    {% for i in el.Project_Order.all %}
+                        {{ i.name }} </br>
+                    {% endfor %}
+
+
+                    {{ el.date }} </br>
+                    {{ el.time }}
+                </p>
+            </div>
+
+            <div class="info-employee info-employee-in-orders">
+                <p class="text-info-employee text-info-employee-in-orders">
+                    {{ el.customer }} </br>
+                    {{ el.phone }} </br>
+                    {{ el.place }}
+                </p>
+            </div>
+
+            <div class="projects-employee projects-employee-in-orders">
+                Состав </br>
+                {% for i in el.employee.all %}
+                    {{ i }} </br>
+                {% endfor %}
+            </div>
+
+            <a href="{% url 'refactor_order' el.id %}">
+                <div class="refactor-employee refactor-employee-in-orders">
+                    Редактировать
+                </div>
+            </a>
+
+            <a href="{% url 'complete_order' el.id %}">
+                <div class="delete-employee complete-employee-in-orders">
+                    Отметить выполненным
+                </div>
+            </a>
+
+            <a href="{% url 'delete_order' el.id %}">
+                <div class="delete-employee delete-employee-in-orders">
+                    Удалить
+                </div>
+            </a>
+        </div>
+
+
+    {% endfor %}
+
+    {% else %}
+        <h1>На данный момент нет заказов</h1>
+    {% endif %}
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<a id="add-project" href="{% url 'add_order' %}">+</a>
+{% endblock %}

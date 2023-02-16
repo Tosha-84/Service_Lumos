@@ -1,0 +1,85 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Добавить участника
+{% endblock %}
+
+{% load static %}
+
+
+{% block center %}
+
+
+            <div class="under-add-project">
+                <a class="back-to-projects" href=" {% url 'employees' %} ">
+                    <img id="back" src=" {% static 'main/img/Стрелка.png' %} " alt='Назад'>
+                </a>
+                <h1 id="text-add-project">
+
+                    {% if employee.id %}
+            Редактировать участника
+
+            {% else %}
+            Добавить участника
+            {% endif %}
+                </h1>
+            </div>
+
+
+            <form method="post" enctype="multipart/form-data" class="for-form">
+
+                <div class="first-main-add-project">
+
+                    <div class="first-main-add-project-left">
+
+                        {% csrf_token %}
+                        {{ form.name }}
+                        {{ form.surname }}
+                        {{ form.patronymic }}
+
+
+
+
+                    </div>
+
+                    <div class="first-main-add-project-left">
+
+                        <!-- <div class="field-in-add-project"></div> -->
+
+                        {{ form.phone }}
+                        {{ form.vk_link }}
+                        {{ form.telegram_link }}
+
+
+                    </div>
+                </div>
+                <div class="second-main-add-project first-main-add-project">
+
+
+
+                    {{ form.avatar }}
+
+
+                </div>
+
+
+                <div class="button-add-project first-main-add-project">
+                    <button id="button-add-project" type="submit">
+                                                    {% if employee.id %}
+            Редактировать
+
+            {% else %}
+            Добавить
+            {% endif %}
+                    </button>
+                </div>
+                <span> {{ error }} </span>
+
+            </form>
+
+
+
+
+
+{% endblock %}

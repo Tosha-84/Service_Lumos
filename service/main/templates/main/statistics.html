@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Статистика
+{% endblock %}
+
+{% block center %}
+    <div style="text-align: center; margin-top: calc(25%)">
+    <h1 style="font-size: 30px; font-weight: bold">Статистика</h1> </br>
+    <h1>Количество проектов на данный момент: {{ projects.count }}</h1> </br>
+    <h1>Количество сотрудников на данный момент: {{ employees.count }}</h1> </br>
+    <h1>Количество реквизита на данный момент: {{ props.count }}</h1> </br>
+    </div>
+
+
+{% endblock %}

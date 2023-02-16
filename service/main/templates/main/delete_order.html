@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Проекты
+{% endblock %}
+
+{% load static %}
+
+
+{% block center %}
+
+
+
+            <div class="first-main-add-project in-project1">
+                <a class="back-to-projects back-in-project" href=" {% url 'orders' %} ">
+                    <img id="back" src=" {% static 'main/img/Стрелка.png' %} " alt='Назад'>
+                </a>
+
+
+                                <h1> {% for i in order.Project_Order.all %} {{ i }} {% endfor %}
+                                на {{ order.date }} в {{ order.time }}</h1>
+
+
+                <div class="first-main-add-project-left in-under-in-project1">
+
+                </div>
+
+
+
+            </div>
+
+            <div class="second-main-add-project in-project2">
+                <form method="post">
+                    {% csrf_token %}
+                    <button id="delete-project-in-delete" type="submit">Удалить заказ</button>
+                </form>
+
+            </div>
+
+
+{% endblock %}

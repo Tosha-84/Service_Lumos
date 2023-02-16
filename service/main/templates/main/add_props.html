@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Добавить участника
+{% endblock %}
+
+{% load static %}
+
+
+{% block center %}
+
+
+            <div class="under-add-project">
+                <a class="back-to-projects" href=" {% url 'props' %} ">
+                    <img id="back" src=" {% static 'main/img/Стрелка.png' %} " alt='Назад'>
+                </a>
+                <h1 id="text-add-project">
+                    {% if props.id %}
+                        Редактировать реквизит
+                        {% else %}
+                        Добавить реквизит
+                        {% endif %}
+                </h1>
+            </div>
+
+            <form method="post" enctype="multipart/form-data" class="for-form">
+
+                <div class="first-main-add-project" id="main-in-add-props">
+
+                    <div class="first-main-add-project-left">
+
+                        {% csrf_token %}
+                        {{ form.name }}
+                        Состояние
+                        {{ form.state }}
+                        {{ form.avatar }}
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="button-add-project first-main-add-project">
+                    <button id="button-add-project" type="submit">
+                        {% if props.id %}
+                        Редактировать
+                        {% else %}
+                        Добавить
+                        {% endif %}
+                    </button>
+                </div>
+                <span> {{ error }} </span>
+
+
+            </form>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Реквизит
+{% endblock %}
+
+{% block center %}
+                <div id="main-employees" class="main-projects">
+
+                    {% if props %}
+                        {% for el in props %}
+
+                <div class="project">
+                    <div class="avatar-project-div">
+                        <img class="avatar-project" src=" {{ el.avatar_url }} ">
+                    </div>
+                    <div class="name-project name-props">
+                        <p> {{ el.name }} </p>
+
+                        {% if el.state == True %}
+                            <div class="props-status"></div>
+                        {% else %}
+                            <div class="props-status" style="background: red"></div>
+                        {% endif %}
+                            <a href="{% url 'refactor_props' el.id %}">
+                        <div class="refactor-employee">
+                            Редактировать
+                        </div>
+                    </a>
+
+                    <a href="{% url 'delete_props' el.id%}">
+                        <div class="delete-employee">
+                            Удалить
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+                        {% endfor %}
+                    {% else %}
+                        <h1 style="font-size: 50px; margin-top: -50%">Добавьте реквизит</h1>
+                    {% endif %}
+
+            </div>
+
+            <a id="add-project" href="{% url 'add_props' %}">+</a>
+{% endblock %}

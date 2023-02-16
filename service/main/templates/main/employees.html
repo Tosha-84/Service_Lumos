@@ -1,0 +1,69 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Сотрудники
+{% endblock %}
+
+{% block center %}
+
+<div id="main-employees">
+
+    {% if employees %}
+        {% for el in employees %}
+
+            <div class="employee">
+                <div class="avatar-employee-div">
+                    <img class="avatar-employee" src=" {{ el.avatar_url }} ">
+                </div>
+
+
+                <div class="info-employee">
+                    <p class="text-info-employee">
+                        {{ el.name }} </br>
+                        {{ el.surname }} </br>
+                        {{ el.phone }} </br>
+                    </p>
+                </div>
+
+                <div class="projects-employee">
+                    Проекты </br>
+
+                    {{ el.project }} </br>
+
+                    {% for project in projects.all %}
+                        {% for i in project.employee.all %}
+                            {% if el.id == i.id %}
+                                {{ project.name }} </br>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+
+                </div>
+
+                <a href="{% url 'refactor_employee' el.id %}">
+                    <div class="refactor-employee">
+                        Редактировать
+                    </div>
+                </a>
+
+                <a href="{% url 'delete_employee' el.id %}">
+                    <div class="delete-employee">
+                        Удалить
+                    </div>
+                </a>
+
+            </div>
+
+        {% endfor %}
+    {% else %}
+        <h1 style="font-size: 50px; margin-top: -50%">Добавте первого сотрудника</h1>
+    {% endif %}
+
+
+
+</div>
+
+<a id="add-project" href="{% url 'add_employee' %}">+</a>
+
+{% endblock %}

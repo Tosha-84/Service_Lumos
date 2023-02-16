@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Проекты
+{% endblock %}
+
+{% load static %}
+
+
+{% block center %}
+
+            <div class="avatar-project-div under-in-project">
+                <img class="avatar-project under-in-project" src="{{ project.avatar_url }}">
+            </div>
+
+            <div class="first-main-add-project in-project1">
+                <a class="back-to-projects back-in-project" href=" {% url 'projects' %} ">
+                    <img id="back" src=" {% static 'main/img/Стрелка.png' %} " alt='Назад'>
+                </a>
+
+                                <h1> {{ project.name }} </h1>
+
+
+                <div class="first-main-add-project-left in-under-in-project1">
+
+                </div>
+                <div class="first-main-add-project-left in-under-in-project2">
+                    <a href="{% url 'refactor_project' project.id %}">
+                        <div id="refactor-project">
+                            Редактировать
+                        </div>
+                    </a>
+                    <a href="{% url 'delete_project' project.id %}">
+                        <div id="delete-project">
+                            Удалить
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+
+            <div class="second-main-add-project in-project2">
+                <p>Стоимость: {{ project.base_cost }}</p> </br>
+                <p style="font-weight: bold;">Сотрудники:</p>
+                    {% for employee in project.employee.all %}
+                        {{ employee }} </br>
+                    {% endfor %}
+                </p>
+                </br>
+                <p style="font-weight: bold;">Реквизит:</p>
+                    {% for props in project.props.all %}
+                        {{ props }} </br>
+                    {% endfor %}
+                </p>
+
+            </div>
+
+
+{% endblock %}

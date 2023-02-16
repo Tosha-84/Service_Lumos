@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %} </title>
+    <link rel="stylesheet" href=" {% static 'main/css/reset.css' %} ">
+    <link rel="stylesheet" href=" {% static 'main/css/style.css' %} ">
+</head>
+
+<body>
+    <div class="under">
+        <div class="logo">
+            <img id="logo" src=" {% static 'main/img/Lumos_logo.png' %} ">
+        </div>
+        <div class="username">
+            <div class="avatar">
+                <img src=" {% static 'main/img/Человек.png' %} " alt="Аватарка" style="width: 60px;">
+            </div>
+            <div class="name">
+                <div class="text">
+                    Вилачёв Антон
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+
+        <div class="left panel">
+            <a class="menu-item" id="notifications" href="{% url 'notifications' %}">
+                <img class="icon" src= " {% static 'main/img/Новости.png' %} "  alt='Новости'>
+            </a>
+            <a class="menu-item" id="projects" href="{% url 'projects' %}">
+                <img class="icon" src=" {% static 'main/img/Проекты.png' %} " alt="Проекты">
+            </a>
+            <a class="menu-item" id="orders" href="{% url 'orders' %}">
+                <img class="icon" src=" {% static 'main/img/Заказ.png' %} " alt="Заказы">
+            </a>
+            <a class="menu-item" id="tasks" href="{% url 'tasks' %}">
+                <img class="icon" src=" {% static 'main/img/Доска.png' %} "  alt="Доска заданий">
+            </a>
+            <a class="menu-item" id="calendar" href="{% url 'calendar' %}">
+                <img class="icon" src=" {% static 'main/img/Календарь.png' %} " alt="Календарь">
+            </a>
+            <a class="menu-item" id="props" href="{% url 'props' %}">
+                <img class="icon" src=" {% static 'main/img/Гараж.png' %} " alt="Учёт реквизита">
+            </a>
+            <a class="menu-item" id="employees" href="{% url 'employees' %}">
+                <img class="icon" src=" {% static 'main/img/Толпа.png' %} " alt="Коллектив">
+            </a>
+            <a class="menu-item" id="statistics" href="{% url 'statistics' %}">
+                <img class="icon" src=" {% static 'main/img/Статистика.png' %} " alt="Статистика">
+            </a>
+        </div>
+
+        <div class="center">
+
+            {% block center %}
+            {% endblock %}
+
+        </div>
+        <div class="right panel">
+
+        </div>
+    </div>
+</body>
+
+</html>

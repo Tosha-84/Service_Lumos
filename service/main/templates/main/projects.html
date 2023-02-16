@@ -1,0 +1,66 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Проекты
+{% endblock %}
+
+
+
+{% block center %}
+
+
+
+            <div class="projects">
+                <div class="under-projects">
+                    <div class="in-under-project" id="search-project">
+
+                    </div>
+                    <div class="in-under-project" id="all-projects">
+                        Все
+                    </div>
+                    <div class="in-under-project" id="fire-projects">
+                        Огненное
+                    </div>
+                    <div class="in-under-project" id="light-projects">
+                        Световое
+                    </div>
+                    <div class="in-under-project" id="dance-projects">
+                        Танцевальное
+                    </div>
+                </div>
+                <div class="main-projects">
+
+
+<!--                    <div class="project">-->
+<!--                        <div class="avatar-project">-->
+<!--                        </div>-->
+<!--                        <div class="name-project">-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    {% if projects %}
+                        {% for el in projects %}
+                                        <a href="{% url 'project' el.id %}">
+
+                            <div class="project">
+                                <div class="avatar-project-div">
+                                    <img class="avatar-project" src=" {{ el.avatar_url }} ">
+                                </div>
+                                <div class="name-project">
+                                    {{ el.name }}
+                                </div>
+                            </div>
+
+                                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <h1 style="font-size: 50px; margin-top: -50%">Создайте свой первый проект</h1>
+                    {% endif %}
+                </div>
+
+
+                <a id="add-project" href="{% url 'addProject' %}">+</a>
+            </div>
+
+{% endblock %}
